@@ -12,12 +12,19 @@ import sys
 
 # Your name here, and any other people/sources who helped.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "katran009 & google search"
 
 
-def alphabetize(string):
-    """Returns alphabetized version of the string"""
-    return "".join(sorted(string.lower()))
+# def alphabetize(string):
+#     """Returns alphabetized version of the string"""
+#     return "".join(sorted(string.lower()))
+
+def alphabetize(s1, s2):
+    # convert the strings to lower case and sort them
+    s1 = sorted(s1.lower())
+    s2 = sorted(s2.lower())
+    # If the string match, they are anagrams else they are not
+    return s1 == s2
 
 
 def find_anagrams(words):
@@ -43,7 +50,7 @@ def main(args):
 
     with open(args[0]) as f:
         words = f.read().split()
-    anagram_dict = find_anagrams(words)
+    anagram_dict = find_all_anagrams(words)
     for k, v in anagram_dict.items():
         print("{} : {}".format(k, v))
 
