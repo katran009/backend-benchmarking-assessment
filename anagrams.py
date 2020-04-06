@@ -12,35 +12,13 @@ import sys
 
 # Your name here, and any other people/sources who helped.
 # Give credit where credit is due.
-__author__ = "katran009"
+__author__ = "katran009, research through Google"
 
 
 def alphabetize(string):
     """Returns alphabetized version of the string"""
     return "".join(sorted(string.lower()))
 
-
-# def alphabetize(word):
-#     """Returns word in alphabetical order."""
-#     t = list(word)
-#     t.sort()
-#     t = ''.join(t)
-#     return t
-
-
-# def find_anagrams(words):
-#     """
-#     Returns a dictionary with keys that are alphabetized words and values
-#     that are all words that, when alphabetized, match the key.
-#     Example:
-#     {'dgo': ['dog'], 'act': ['cat', 'act']}
-#     """
-#     anagrams = {}
-#     alphabetize(word):
-#         for w in words
-#             if alphabetize(w) == alphabetize(word)
-#         for word in words:
-#     return anagrams
 
 def find_anagrams(words):
     """
