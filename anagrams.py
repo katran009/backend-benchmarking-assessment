@@ -12,20 +12,35 @@ import sys
 
 # Your name here, and any other people/sources who helped.
 # Give credit where credit is due.
-__author__ = "katran009 & google search"
+__author__ = "katran009"
 
 
-# def alphabetize(string):
-#     """Returns alphabetized version of the string"""
-#     return "".join(sorted(string.lower()))
+def alphabetize(string):
+    """Returns alphabetized version of the string"""
+    return "".join(sorted(string.lower()))
 
-def alphabetize(s1, s2):
-    # convert the strings to lower case and sort them
-    s1 = sorted(s1.lower())
-    s2 = sorted(s2.lower())
-    # If the string match, they are anagrams else they are not
-    return s1 == s2
 
+# def alphabetize(word):
+#     """Returns word in alphabetical order."""
+#     t = list(word)
+#     t.sort()
+#     t = ''.join(t)
+#     return t
+
+
+# def find_anagrams(words):
+#     """
+#     Returns a dictionary with keys that are alphabetized words and values
+#     that are all words that, when alphabetized, match the key.
+#     Example:
+#     {'dgo': ['dog'], 'act': ['cat', 'act']}
+#     """
+#     anagrams = {}
+#     alphabetize(word):
+#         for w in words
+#             if alphabetize(w) == alphabetize(word)
+#         for word in words:
+#     return anagrams
 
 def find_anagrams(words):
     """
@@ -34,11 +49,13 @@ def find_anagrams(words):
     Example:
     {'dgo': ['dog'], 'act': ['cat', 'act']}
     """
-    anagrams = {
-        alphabetize(word): [
-            w for w in words
-            if alphabetize(w) == alphabetize(word)]
-        for word in words}
+    anagrams = {}
+    for w in words:
+        s = alphabetize(w)
+        if s not in anagrams:
+            anagrams[s] = [w]
+        else:
+            anagrams[s].append(w)
     return anagrams
 
 
@@ -50,7 +67,7 @@ def main(args):
 
     with open(args[0]) as f:
         words = f.read().split()
-    anagram_dict = find_all_anagrams(words)
+    anagram_dict = find_anagrams(words)
     for k, v in anagram_dict.items():
         print("{} : {}".format(k, v))
 
